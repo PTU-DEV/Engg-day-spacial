@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engi-Bites Junction - IKGPTU Engineer's Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+      .highlight-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      /* Simple animation for cards on hover */
+      .card-hover:hover {
+        transform: translateY(-5px);
+        transition: transform 0.2s ease-in-out;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body class="gradient-bg text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <!-- Header Section -->
+      <header class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+          Engi-Bites Junction
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mt-2">
+          Special Stall for Engineer's Day @ IKGPTU!
+        </p>
+      </header>
+
+      <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Left Column: Menu & Contest -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- Menu Section -->
+          <section
+            id="menu"
+            class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg"
+          >
+            <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">
+              Our Menu
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Single Items -->
+              <div class="bg-white p-5 rounded-xl shadow-md card-hover">
+                <h3 class="text-2xl font-semibold mb-3">A La Carte</h3>
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🥟</span>
+                      <span class="font-semibold">Momos</span>
+                    </div>
+                    <span class="font-bold text-lg">₹10</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🍹</span>
+                      <span class="font-semibold">Mojito</span>
+                    </div>
+                    <span class="font-bold text-lg">₹30</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🍨</span>
+                      <span class="font-semibold">Gulab Jamun</span>
+                    </div>
+                    <span class="font-bold text-lg">₹15</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Combo Offers -->
+              <div class="bg-white p-5 rounded-xl shadow-md card-hover">
+                <h3 class="text-2xl font-semibold mb-3">Combo Offers</h3>
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="font-semibold">Engineer's Fuel</p>
+                      <p class="text-sm text-gray-500">
+                        (6 Momos, 2 Gulab Jamun, 1 Mojito)
+                      </p>
+                    </div>
+                    <span class="font-bold text-lg">₹110</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="font-semibold">Sweet Code</p>
+                      <p class="text-sm text-gray-500">(3 Gulab Jamun)</p>
+                    </div>
+                    <span class="font-bold text-lg">₹40</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Order Form Section -->
+          <section
+            id="order-form"
+            class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg"
+          >
+            <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">
+              Place Your Order
+            </h2>
+            <!-- User Info -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div>
+                <label
+                  for="customerName"
+                  class="block text-sm font-medium text-gray-700"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="customerName"
+                  placeholder="e.g., Ada Lovelace"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2"
+                />
+              </div>
+              <div>
+                <label
+                  for="uniqueId"
+                  class="block text-sm font-medium text-gray-700"
+                  >Unique ID (Auto-Generated)</label
+                >
+                <input
+                  type="text"
+                  id="uniqueId"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm p-2 bg-gray-100"
+                  readonly
+                />
+              </div>
+                <div>
+                <label
+                  for="customerPhone"
+                  class="block text-sm font-medium text-gray-700"
+                  >Your Phone Number</label
+                >
+                <input
+                  type="text"
+                  id="customerPhone"
+                  placeholder="e.g., 9876543210"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2"
+                />
+              </div>
+            </div>
+            <!-- Order Items -->
+            <div
+              id="order-items"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4"
+            >
+              <!-- Item inputs will be added here by JS -->
+            </div>
+            <!-- Total & Submission -->
+            <div
+              class="mt-6 border-t pt-4 flex flex-col md:flex-row items-center justify-between"
+            >
+              <div class="text-2xl font-bold mb-4 md:mb-0">
+                Total: ₹<span id="totalCost">0</span>
+              </div>
+              <button
+                id="submitOrderBtn"
+                class="w-full md:w-auto highlight-card text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              >
+                Submit Order
+              </button>
+            </div>
+            <div id="form-message" class="mt-4 text-center font-semibold"></div>
+          </section>
+        </div>
+
+        <!-- Right Column: Contest & Leaderboard -->
+        <div class="space-y-8">
+          <!-- Contest Details -->
+          <section
+            class="highlight-card text-white p-6 rounded-2xl shadow-lg text-center"
+          >
+            <h2 class="text-3xl font-bold mb-3">Leaderboard Contest!</h2>
+            <p class="text-lg">
+              The student who spends the most throughout the day gets a
+              <strong class="text-yellow-300">25% DISCOUNT</strong> on their
+              final total bill by EOD!
+            </p>
+          </section>
+
+          <!-- Leaderboard Section -->
+          <section
+            id="leaderboard"
+            class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg"
+          >
+            <h2 class="text-3xl font-bold mb-4 text-center text-gray-800">
+              Top Engineers
+            </h2>
+            <div class="overflow-x-auto">
+              <table class="min-w-full">
+                <thead class="bg-gray-200/50">
+                  <tr>
+                    <th
+                      class="px-4 py-2 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Rank
+                    </th>
+                    <th
+                      class="px-4 py-2 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Name
+                    </th>
+                    <th
+                      class="px-4 py-2 text-center text-sm font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                     Total Spent
+                    </th>
+                    <th
+                      class="px-4 py-2 text-right text-sm font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Orders
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboard-body" class="bg-white">
+                  <!-- Leaderboard data will be populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+      <span>Designed by <span class="font-semibold text-indigo-600">
+        <a href="https://peach-henriette-43.tiiny.site/" target="_blank">FOSS PTU</a></span></span>
+    </footer>
+   <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const API_BASE = '/api';
+
+    // --- CONFIGURATION ---
+    const menuItems = [
+      { id: 'momos', name: 'Momos', price: 10 },
+      { id: 'mojito', name: 'Mojito', price: 30 },
+      { id: 'gulab_jamun', name: 'Gulab Jamun', price: 15 },
+      { id: 'combo1', name: "Engineer's Fuel", price: 110 },
+      { id: 'combo2', name: 'Sweet Code', price: 40 },
+    ];
+
+    // --- DOM ELEMENTS ---
+    const orderItemsContainer = document.getElementById('order-items');
+    const totalCostEl = document.getElementById('totalCost');
+    const customerNameEl = document.getElementById('customerName');
+    const customerPhoneEl = document.getElementById('customerPhone');
+    const uniqueIdEl = document.getElementById('uniqueId');
+    const submitOrderBtn = document.getElementById('submitOrderBtn');
+    const leaderboardBody = document.getElementById('leaderboard-body');
+    const formMessageEl = document.getElementById('form-message');
+
+    // --- FUNCTIONS ---
+
+    function generateUniqueId() {
+      return 'ENG-' + Math.random().toString(16).slice(2, 6);
+    }
+
+    function populateOrderForm() {
+      menuItems.forEach((item) => {
+        const itemHTML = `
+          <div class="bg-white p-3 rounded-lg shadow-sm">
+              <label for="${item.id}" class="block text-sm font-semibold text-gray-800">
+                ${item.name} (₹${item.price})
+              </label>
+              <input type="number" id="${item.id}" data-price="${item.price}" min="0" value="0"
+                class="order-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2">
+          </div>`;
+        orderItemsContainer.innerHTML += itemHTML;
+      });
+    }
+
+    function calculateTotal() {
+      let total = 0;
+      document.querySelectorAll('.order-input').forEach((input) => {
+        const price = parseFloat(input.dataset.price);
+        const quantity = parseInt(input.value) || 0;
+        if (quantity < 0) input.value = 0;
+        total += price * quantity;
+      });
+      totalCostEl.textContent = total;
+    }
+
+    async function fetchLeaderboard() {
+      try {
+        const res = await fetch(`${API_BASE}/top-orders`);
+        if (!res.ok) throw new Error('Failed to fetch leaderboard');
+        const data = await res.json();
+
+        leaderboardBody.innerHTML = '';
+        data.forEach((entry, index) => {
+          const row = `
+            <tr class="${index === 0 ? 'bg-yellow-100 font-bold' : ''}">
+              <td class="px-4 py-3">${index + 1}</td>
+              <td class="px-4 py-3">${entry.customerName} (${entry.uid})</td>
+              <td class="px-4 py-3 text-right">₹${entry.total}</td>
+              <td class="px-4 py-3 text-center">${entry.orderCount || '-'}</td>
+            </tr>`;
+          leaderboardBody.innerHTML += row;
+        });
+      } catch (err) {
+        console.error(err);
+        displayMessage('Error loading leaderboard.', 'error');
+      }
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+
+      const name = customerNameEl.value.trim();
+      const phone = customerPhoneEl.value.trim();
+      const uniqueId = uniqueIdEl.value;
+      const total = parseFloat(totalCostEl.textContent);
+
+      if (!name) return displayMessage('Please enter your name.', 'error');
+      if (!phone) return displayMessage('Please enter your phone.', 'error');
+
+      let items = [];
+      document.querySelectorAll('.order-input').forEach((input) => {
+        const qty = parseInt(input.value);
+        if (qty > 0) {
+          items.push({
+            id: input.id,
+            name: menuItems.find((item) => item.id === input.id).name,
+            quantity: qty,
+            price: parseFloat(input.dataset.price),
+          });
+        }
+      });
+
+      if (items.length === 0) {
+        return displayMessage('Your order is empty!', 'error');
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/order`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            customerName: name,
+            customerPhone: phone,
+            uid: uniqueIdEl.value,
+            items,
+            total,
+          }),
+        });
+
+        if (!res.ok) throw new Error('Failed to submit order');
+        await res.json();
+        localStorage.setItem('userDetails', JSON.stringify({ name, phone }));
+        displayMessage('Your order has been submitted!', 'success');
+        resetForm();
+        fetchLeaderboard();
+      } catch (err) {
+        console.error(err);
+        displayMessage('Error submitting order.', 'error');
+      }
+    }
+
+    function displayMessage(message, type) {
+      formMessageEl.textContent = message;
+      formMessageEl.className =
+        `mt-4 text-center font-semibold ` +
+        (type === 'success' ? 'text-green-600' : 'text-red-600');
+      setTimeout(() => (formMessageEl.textContent = ''), 5000);
+    }
+
+    function resetForm() {
+      uniqueIdEl.value = localStorage.getItem('uniqueId');
+      document.querySelectorAll('.order-input').forEach((input) => (input.value = 0));
+      calculateTotal();
+    }
+    
+    // --- INIT ---
+    populateOrderForm();
+    uniqueIdEl.value = localStorage.getItem('uniqueId') || generateUniqueId();
+    localStorage.setItem('uniqueId', uniqueIdEl.value);
+    const userDetails = JSON.parse(localStorage.getItem('userDetails')) || { name: '', phone: '' };
+    customerNameEl.value = userDetails.name;
+    customerPhoneEl.value = userDetails.phone;
+    calculateTotal();
+    fetchLeaderboard();
+
+    // --- EVENTS ---
+    orderItemsContainer.addEventListener('input', calculateTotal);
+    submitOrderBtn.addEventListener('click', handleSubmit);
+  });
+</script>
+
+  </body>
+</html>
