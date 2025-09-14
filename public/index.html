@@ -398,6 +398,7 @@
 
     function resetForm() {
       uniqueIdEl.value = localStorage.getItem('uniqueId');
+      bookingCodeEl.value = '';
       document.querySelectorAll('.order-input').forEach((input) => (input.value = 0));
       calculateTotal();
     }
