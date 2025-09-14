@@ -155,6 +155,19 @@
                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2"
                 />
               </div>
+               <div>
+                <label
+                  for="bookingCode"
+                  class="block text-sm font-medium text-gray-700"
+                  >Booking Code ( Get Code From Stall before submit)</label
+                >
+                <input
+                  type="text"
+                  id="bookingCode"
+                  autocomplete="off"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm p-2 bg-gray-100"
+                />
+              </div>
             </div>
             <!-- Order Items -->
             <div
@@ -261,6 +274,7 @@
     const customerNameEl = document.getElementById('customerName');
     const customerPhoneEl = document.getElementById('customerPhone');
     const uniqueIdEl = document.getElementById('uniqueId');
+    const bookingCodeEl = document.getElementById('bookingCode');
     const submitOrderBtn = document.getElementById('submitOrderBtn');
     const leaderboardBody = document.getElementById('leaderboard-body');
     const formMessageEl = document.getElementById('form-message');
@@ -307,7 +321,7 @@
           const row = `
             <tr class="${index === 0 ? 'bg-yellow-100 font-bold' : ''}">
               <td class="px-4 py-3">${index + 1}</td>
-              <td class="px-4 py-3">${entry.customerName} (${entry.uid})</td>
+              <td class="px-4 py-3">${String(entry.customerName).toUpperCase()}</td>
               <td class="px-4 py-3 text-right">₹${entry.total}</td>
               <td class="px-4 py-3 text-center">${entry.orderCount || '-'}</td>
             </tr>`;
@@ -324,6 +338,7 @@
 
       const name = customerNameEl.value.trim();
       const phone = customerPhoneEl.value.trim();
+      const bookingCode = bookingCodeEl.value.trim();
       const uniqueId = uniqueIdEl.value;
       const total = parseFloat(totalCostEl.textContent);
 
@@ -355,6 +370,7 @@
             customerName: name,
             customerPhone: phone,
             uid: uniqueIdEl.value,
+            bookingCode,
             items,
             total,
           }),
